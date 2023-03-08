@@ -1,7 +1,7 @@
 import { Layout } from "./components/Layout";
 import React from "react";
 import { createBrowserRouter } from "react-router-dom";
-import { IndexPage } from "./pages";
+import { HomePage } from "./pages/home";
 import { CartPage } from "./pages/cart";
 
 export const router = createBrowserRouter([
@@ -11,7 +11,7 @@ export const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <IndexPage />,
+        element: <HomePage />,
       },
       {
         path: "/cart",
