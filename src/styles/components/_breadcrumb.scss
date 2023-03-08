@@ -1,0 +1,16 @@
+.breadcrumb {
+  list-style: none;
+  display: flex;
+  
+  &__item {
+    &:not(:last-child)::after {
+      margin-right: 10px;
+      margin-left: 10px;
+      content: "/";
+    }
+
+    &--active {
+      color: $disbledButtonColor;
+    }
+  } 
+}

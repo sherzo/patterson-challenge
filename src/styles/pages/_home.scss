@@ -1,5 +1,13 @@
 .home {
   margin-top: 10px;
+  position: relative;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+
   &__title {
     font-size: 22px;
   }
