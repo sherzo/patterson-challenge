@@ -1,4 +1,6 @@
-.main-content {
-    background-color: $backgroundColor;
-    min-height: calc(100vh - 110px);
+.main {
+  min-height: calc(100vh - 110px);
+  max-width: 1128px;
+  margin: 0 auto;
+  padding-top: 6px;
 }
