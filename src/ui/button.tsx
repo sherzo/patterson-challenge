@@ -1,7 +1,7 @@
 import React, { ReactNode } from "react";
 
 type TButtonSize = "sm" | "md";
-type TButtonVariant = "fill" | "default";
+type TButtonVariant = "fill" | "default" | "light";
 
 type TButton = React.ButtonHTMLAttributes<HTMLButtonElement> & {
   children: string | ReactNode;
