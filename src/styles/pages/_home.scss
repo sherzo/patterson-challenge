@@ -1,7 +1,9 @@
 .home {
   margin-top: 10px;
   position: relative;
-
+  max-width: 1228px;
+  margin: 0 auto;
+  
   &__header {
     padding: 0 15px;
     display: flex;

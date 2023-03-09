@@ -2,7 +2,33 @@
   border: none;
   background-color: black;
   color: white;
-  padding: 0.5rem 0.8rem;
+  padding: 0.8rem 1.5rem;
+  text-transform: uppercase;
+  font-weight: 600;
+
+  &:disabled {
+    background-color: $disbledButtonColor;
+    cursor: not-allowed;
+  }
+  
+  &--sm {
+    padding: 0.5rem 0.8rem;
+  }
+
+  &--full-width {
+    width: 100%;
+  }
+}
+
+.input {
+  padding: 0.9rem 1rem;
+  border: 1px solid $backgroundColor;
+  outline: none;
+  text-transform: uppercase;
+}
+
+.text-thin {
+  font-weight: 300;
 }
 
 .text-primary {

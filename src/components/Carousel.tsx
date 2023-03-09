@@ -10,13 +10,13 @@ const responsive = {
 
 export const Carousel = ({ items }: { items: ReactNode[] }) => {
   const renderPrevButton = () => (
-    <Button>
+    <Button variant="sm">
       <>&lt;</>
     </Button>
   );
 
   const renderNextButton = () => (
-    <Button>
+    <Button variant="sm">
       <>&gt;</>
     </Button>
   );
