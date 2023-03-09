@@ -2,48 +2,13 @@ import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 import { getReductions } from "../api";
-import { DeleteIcon } from "../assets/icons/deleteIcon";
 import { Card } from "../components/Card";
+import { CartItem } from "../components/CartItem";
+import { ReductionItem } from "../components/ReductionItem";
 import { TotalCart } from "../components/TotalCart";
-import { addReduction, removeItem } from "../redux/slice/cart";
+import { addReduction } from "../redux/slice/cart";
 import { Button } from "../ui/button";
 import { Input } from "../ui/input";
-
-const CartItem = ({ name, image, price, id }: TProduct): JSX.Element => {
-  const dispatch = useDispatch();
-
-  return (
-    <tr className="cart__item" key={id}>
-      <td>
-        <img src={image} className="cart__item__image" />
-      </td>
-      <td>{name}</td>
-      <td>{price} €</td>
-      <td>
-        <Button
-          size="sm"
-          variant="default"
-          onClick={() => {
-            dispatch(removeItem(id));
-          }}
-        >
-          <DeleteIcon />
-        </Button>
-      </td>
-    </tr>
-  );
-};
-
-const ReductionItem = ({ code, amount }: TReduction) => {
-  return (
-    <div className="cart__pay__reduction-item" key={code}>
-      <span>
-        Cod. Descuento: <b>{code}</b>
-      </span>
-      <span>-{amount} €</span>
-    </div>
-  );
-};
 
 export const CartPage = (): JSX.Element => {
   const [code, setCode] = useState("");
@@ -114,11 +79,13 @@ export const CartPage = (): JSX.Element => {
         <div className="cart__pay">
           <Card title={<TitleCardPay />}>
             <div>
-              {reduction && <ReductionItem {...reduction} />}
               {reduction && (
-                <div className="cart__pay__reduction-total">
-                  Total: {getTotal()} €
-                </div>
+                <>
+                  <ReductionItem {...reduction} />
+                  <div className="cart__pay__reduction-total">
+                    Total: {getTotal()} €
+                  </div>
+                </>
               )}
               <Button fullWidth disabled>
                 Finalizar compra
