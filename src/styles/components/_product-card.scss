@@ -2,18 +2,34 @@
   display: block;
   padding: 20px 15px;
   max-width: 300px;
+  transition: opacity ease 0.5s;
+  
+  &--selected {
+    opacity: 0.5;
+  }
 
   &__header {
     position: relative;
     background-color: white;
-    padding: 30px 15px 8px 15px
+    padding: 30px 15px 8px 15px;
+    transition: opacity ease 0.5s;
+    z-index: 1;
+    
+    &:hover {
+      opacity: 0.7;
+
+      .product-card__buttons {
+        opacity: 1;
+      }
+    }
+   
   }
 
   &__image {
     display: block;
     margin: 0 auto;
     height: 240px;
-    margin-bottom: 20px;
+    margin-bottom: 20px
   }
 
   &__rating, .rating {
@@ -46,5 +62,19 @@
   &__price {
     font-size: 15px;
     font-weight: 500;
+  }
+
+  &__buttons {
+    display: flex;
+    gap: 10px;
+    position: absolute;
+    top: calc(50% - 20px);
+    right: calc(50% - 50px);
+    opacity: 0;
+    transition: opacity ease 0.3s;
+    z-index: 9;
+    &:hover {
+      opacity: 1;
+    }
   }
 }
