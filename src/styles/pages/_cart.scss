@@ -11,6 +11,10 @@
     margin: 0 auto;
     max-width: 1228px;
     gap: 30px;
+
+    @include respond(tab-port){
+      grid-template-columns: auto;
+    }
   }
 
   &__card-title {
