@@ -1,18 +1,29 @@
 import React, { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import { getProducts } from "../api";
 import { Breadcrumb } from "../components/Breadcrumb";
 import { Carousel } from "../components/Carousel";
 import { ProductCard } from "../components/ProductCard";
+import { setProducts } from "../redux/actions/products.actions";
 
 export const HomePage = (): JSX.Element => {
+  const { products } = useSelector((state: TRootState) => state.products);
   const [carouselItems, setCarouselItems] = useState([]);
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    (async () => {
-      const products = await getProducts();
-      setCarouselItems(products.map(ProductCard));
-    })();
+    getProductsData();
   }, []);
+
+  useEffect(() => {
+    setCarouselItems(products.map(ProductCard));
+  }, [products]);
+
+  const getProductsData = async () => {
+    const products = await getProducts();
+    dispatch(setProducts(products));
+  };
 
   return (
     <div className="home">

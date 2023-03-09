@@ -19,3 +19,11 @@ type TApiResponseItem = {
     count: number;
   };
 };
+
+type TRootState = {
+  products: TProductsState;
+};
+
+type TProductsState = {
+  products: TProduct[];
+};
