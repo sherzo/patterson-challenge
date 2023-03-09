@@ -12,5 +12,17 @@
     &--active {
       color: $disbledButtonColor;
     }
+
+    @include respond(tab-port) {
+      &:not(:first-child) {
+        display: none;
+      }
+
+      &::after {
+        content: '' !important;
+        margin-right: 0;
+        margin-left: 0;
+      }
+    }
   } 
 }

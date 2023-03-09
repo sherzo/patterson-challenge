@@ -11,7 +11,10 @@
   }
 
   &__logo {
-    width: 220px;
+    width: 200px;
+    @include respond(tab-land) {
+      width: 150px;
+    }
   }
 
   @include respond(phone) {
