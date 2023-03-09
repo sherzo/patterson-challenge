@@ -1,0 +1,10 @@
+.product-card {
+  display: block;
+  padding: 20px 15px;
+
+  &__header {
+    position: relative;
+    background-color: white;
+    text-align: center;
+  }
+}

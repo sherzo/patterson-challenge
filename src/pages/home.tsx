@@ -1,6 +1,6 @@
 import React from "react";
 import { Breadcrumb } from "../components/Breadcrumb";
-
+import { Carousel } from "../components/Carousel";
 export const HomePage = (): JSX.Element => {
   return (
     <div className="home">
@@ -17,6 +17,9 @@ export const HomePage = (): JSX.Element => {
             { name: "Productos Destacados", link: "/" },
           ]}
         />
+      </div>
+      <div className="home__content">
+        <Carousel />
       </div>
     </div>
   );
