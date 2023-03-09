@@ -1,4 +1,4 @@
-import React, { ReactNode } from "react";
+import React from "react";
 import AliceCarousel from "react-alice-carousel";
 import { Button } from "../ui/button";
 
@@ -8,7 +8,7 @@ const responsive = {
   1024: { items: 4 },
 };
 
-export const Carousel = ({ items }: { items: ReactNode[] }) => {
+export const Carousel = ({ items }: { items: TProduct[] }) => {
   const renderPrevButton = () => (
     <Button size="sm">
       <>&lt;</>

@@ -1,13 +1,15 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 import { getProducts } from "../api";
 import { Breadcrumb } from "../components/Breadcrumb";
-import { ProductCard } from "../components/ProductCard";
 import { setProducts } from "../redux/actions/products.actions";
+import { Carousel } from "../components/Carousel";
+import { ProductCard } from "../components/ProductCard";
 
 export const HomePage = (): JSX.Element => {
   const { products } = useSelector((state: TRootState) => state.products);
+  const [carosuelItems, setCarouselItems] = useState([]);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -15,6 +17,11 @@ export const HomePage = (): JSX.Element => {
       getProductsData();
     }
   }, []);
+
+  useEffect(() => {
+    const components = products.map((p) => <ProductCard {...p} />);
+    setCarouselItems(components);
+  }, [products]);
 
   const getProductsData = async () => {
     const products = await getProducts();
@@ -37,7 +44,7 @@ export const HomePage = (): JSX.Element => {
           ]}
         />
       </div>
-      <div className="home__content">{products.map(ProductCard)}</div>
+      <div className="home__content">{<Carousel items={carosuelItems} />}</div>
     </div>
   );
 };
