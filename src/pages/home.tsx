@@ -11,7 +11,9 @@ export const HomePage = (): JSX.Element => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    getProductsData();
+    if (products.length === 0) {
+      getProductsData();
+    }
   }, []);
 
   const getProductsData = async () => {

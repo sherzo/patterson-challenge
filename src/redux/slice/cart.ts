@@ -5,7 +5,7 @@ const cartSlice = createSlice({
   initialState: {
     cart: {
       items: [],
-      reductions: [],
+      reduction: null,
     },
   },
   reducers: {
@@ -25,13 +25,11 @@ const cartSlice = createSlice({
       state.cart.items = removeItem;
     },
     addReduction: (state, action) => {
-      const exists = state.cart.reductions.find(
-        (item) => item.id === action.payload.id
-      );
-      if (exists) {
+      if (state.cart.reduction) {
         return;
       }
-      state.cart.reductions.push({ ...action.payload });
+
+      state.cart.reduction = { ...action.payload };
     },
   },
 });
