@@ -2,10 +2,12 @@
   background-color: white;
   padding-top: 20px;
   padding-bottom: 20px;
+  min-height: calc(100vh - 115px);
 
   &__grid {
     display: grid;
     grid-template-columns: 2fr 1fr;
+    padding: 0 15px;
     margin: 0 auto;
     max-width: 1228px;
     gap: 30px;
