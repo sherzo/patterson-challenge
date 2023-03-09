@@ -24,7 +24,7 @@
     position: absolute;
     top: calc(50% - 35px);
     left: -50px;
-    width: inherit;
+    width: auto;
     
     @include respond(tab-land) {
       position: initial;
