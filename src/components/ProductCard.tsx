@@ -1,24 +1,30 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { Rating } from "./Rating";
 
-export const ProductCard = (): JSX.Element => {
+export const ProductCard = ({
+  name,
+  price,
+  rate,
+  image,
+  id,
+  reduction,
+}: TProduct): JSX.Element => {
   return (
-    <a className="product-card">
+    <Link className="product-card" key={id} to={"/"}>
       <div className="product-card__header">
-        <img
-          src="https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg"
-          className="product-card__image"
-          alt="Product"
-        />
+        <img src={image} className="product-card__image" alt="Product" />
         <div className="product-card__rating">
-          <Rating value={3} />
+          <Rating rate={rate} />
         </div>
-        <span className="product-card__reduction">-7%</span>
+        {reduction && <span className="product-card__reduction">-7%</span>}
       </div>
       <div className="product-card__content">
-        <p className="product-card__name">Hervidor de Agua</p>
-        <span className="product-card__price">29 €</span>
+        <p className="product-card__name" title={name}>
+          {name}
+        </p>
+        <span className="product-card__price">{price} €</span>
       </div>
-    </a>
+    </Link>
   );
 };

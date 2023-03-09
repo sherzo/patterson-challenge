@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { StarIcon } from "../assets/icons/starIcon";
 
-type TRating = { value: number };
+type TRating = { rate: number };
 
-export const Rating = ({ value }: TRating): JSX.Element => {
+export const Rating = ({ rate }: TRating): JSX.Element => {
   const [stars, setStars] = useState([]);
 
   useEffect(() => {
-    const integerNumber = Math.round(value);
+    const integerNumber = Math.round(rate);
     setStars(Array.from(Array(integerNumber).keys()));
-  }, [value]);
+  }, [rate]);
 
   return (
     <div className="rating">

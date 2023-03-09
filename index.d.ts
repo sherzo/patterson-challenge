@@ -1,9 +1,10 @@
 type TProduct = {
-  id: string;
+  id: number;
   name: string;
   image: string;
   price: number;
   rate: number;
+  reduction: boolean;
 };
 
 type TApiResponseItem = {

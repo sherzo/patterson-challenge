@@ -1,7 +1,19 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { getProducts } from "../api";
 import { Breadcrumb } from "../components/Breadcrumb";
 import { Carousel } from "../components/Carousel";
+import { ProductCard } from "../components/ProductCard";
+
 export const HomePage = (): JSX.Element => {
+  const [carouselItems, setCarouselItems] = useState([]);
+
+  useEffect(() => {
+    (async () => {
+      const products = await getProducts();
+      setCarouselItems(products.map(ProductCard));
+    })();
+  }, []);
+
   return (
     <div className="home">
       <div className="home__header">
@@ -19,7 +31,7 @@ export const HomePage = (): JSX.Element => {
         />
       </div>
       <div className="home__content">
-        <Carousel />
+        {carouselItems && <Carousel items={carouselItems} />}
       </div>
     </div>
   );

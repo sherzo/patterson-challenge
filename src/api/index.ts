@@ -8,6 +8,7 @@ export const getProducts = async (): Promise<TProduct[]> => {
       image: item.image,
       rate: item.rating.rate,
       price: item.price,
+      reduction: Boolean(Math.round(Math.random())),
     }));
   } catch (e) {
     console.log('e', e);

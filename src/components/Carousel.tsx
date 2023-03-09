@@ -1,5 +1,4 @@
-import React from "react";
-import { ProductCard } from "./ProductCard";
+import React, { ReactNode } from "react";
 import AliceCarousel from "react-alice-carousel";
 import { Button } from "../ui/button";
 
@@ -9,7 +8,7 @@ const responsive = {
   1024: { items: 4 },
 };
 
-export const Carousel = () => {
+export const Carousel = ({ items }: { items: ReactNode[] }) => {
   const renderPrevButton = () => (
     <Button>
       <>&lt;</>
@@ -21,13 +20,6 @@ export const Carousel = () => {
       <>&gt;</>
     </Button>
   );
-
-  const items = [
-    <ProductCard />,
-    <ProductCard />,
-    <ProductCard />,
-    <ProductCard />,
-  ];
 
   return (
     <AliceCarousel
