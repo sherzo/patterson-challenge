@@ -1,5 +1,7 @@
 import React from "react";
+import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
+import { addToCart } from "../redux/slice/cart";
 import { Rating } from "./Rating";
 
 export const ProductCard = ({
@@ -9,7 +11,9 @@ export const ProductCard = ({
   image,
   id,
   reduction,
-}: TProduct): JSX.Element => {
+}: TProduct) => {
+  const dispatch = useDispatch();
+
   return (
     <Link className="product-card" key={id} to={"/"}>
       <div className="product-card__header">
@@ -20,7 +24,20 @@ export const ProductCard = ({
         {reduction && <span className="product-card__reduction">-7%</span>}
       </div>
       <div className="product-card__content">
-        <p className="product-card__name" title={name}>
+        <p
+          className="product-card__name"
+          title={name}
+          onClick={() => {
+            dispatch(
+              addToCart({
+                id,
+                name,
+                price,
+                image,
+              })
+            );
+          }}
+        >
           {name}
         </p>
         <span className="product-card__price">{price} €</span>

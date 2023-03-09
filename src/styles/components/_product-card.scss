@@ -1,6 +1,7 @@
 .product-card {
   display: block;
   padding: 20px 15px;
+  max-width: 300px;
 
   &__header {
     position: relative;

@@ -20,8 +20,21 @@ type TApiResponseItem = {
   };
 };
 
+type TCartItem = {
+  id: number;
+  name: string;
+  price: string;
+  image: string;
+};
+
+type TReduction = {
+  code: string;
+  amount: number;
+};
+
 type TRootState = {
   products: TProductsState;
+  cart: any;
 };
 
 type TProductsState = {

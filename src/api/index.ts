@@ -14,3 +14,16 @@ export const getProducts = async (): Promise<TProduct[]> => {
     console.log('e', e);
   }
 };
+
+export const getReductions = () => {
+  return [
+    {
+      code: 'DTO10',
+      amount: 10,
+    },
+    {
+      code: 'DTO50',
+      amount: 50,
+    },
+  ];
+};

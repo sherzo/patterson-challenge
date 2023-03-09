@@ -20,10 +20,34 @@
   }
 
   &__pay {
+    &__reduction-item {
+      display: flex;
+      justify-content: space-between;
+      border: 1px solid $backgroundColor;
+      padding: 1rem 10px;
+      margin-bottom: 10px;
+    }
+
+    &__reduction-total {
+      text-align: right;
+      padding: 1rem 10px;
+    }
+
     &__reduction {
       display: flex;
       gap: 20px;
       margin-top: 2rem;
+    }
+  }
+
+  &__item {
+    td {
+      padding: 10px 1rem;
+      vertical-align: top;
+    }
+
+    &__image {
+      height: 100px;
     }
   }
 }

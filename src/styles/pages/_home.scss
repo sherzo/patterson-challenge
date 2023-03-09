@@ -17,6 +17,8 @@
 
   &__content {
     margin-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
   }
 
   .alice-carousel__prev-btn {

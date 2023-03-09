@@ -1,21 +1,26 @@
 import React, { ReactNode } from "react";
 
-type TButtonVariant = "sm" | "md";
+type TButtonSize = "sm" | "md";
+type TButtonVariant = "fill" | "default";
 
 type TButton = React.ButtonHTMLAttributes<HTMLButtonElement> & {
   children: string | ReactNode;
   fullWidth?: boolean;
+  size?: TButtonSize;
   variant?: TButtonVariant;
 };
 
 export const Button = ({
   children,
-  variant = "md",
+  size = "md",
+  variant = "fill",
   fullWidth = false,
   ...rest
 }: TButton) => (
   <button
-    className={`btn btn--${variant} ${fullWidth ? "btn--full-width" : ""}`}
+    className={`btn btn--${variant} btn--${size} ${
+      fullWidth ? "btn--full-width" : ""
+    }`}
     {...rest}
   >
     {children}
