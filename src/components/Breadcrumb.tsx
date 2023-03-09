@@ -23,6 +23,7 @@ export const BreadcrumbItem = ({
       className={`breadcrumb__item ${
         isActive ? "breadcrumb__item--active" : ""
       }`}
+      key={name}
     >
       <Link to={link}>{name}</Link>
     </li>
