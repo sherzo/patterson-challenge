@@ -1,6 +1,6 @@
 import React from "react";
 
-export const StarIcon = ({ width = 25, height = 25 }) => {
+export const StarIcon = ({ width = 16, height = 16 }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
