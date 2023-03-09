@@ -4,7 +4,7 @@ const initialValue: TProductsState = {
   products: [],
 };
 
-export const ProductsReducer = (
+export const productsReducer = (
   state: TProductsState = initialValue,
   action: { payload: TProduct[]; type: string }
 ): TProductsState => {
