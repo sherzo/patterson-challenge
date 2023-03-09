@@ -1,10 +1,5 @@
 import React from "react";
 
-type TIcon = {
-  width?: number;
-  height?: number;
-};
-
 export const CartIcon = ({ width = 22, height = 22 }: TIcon) => {
   return (
     <svg

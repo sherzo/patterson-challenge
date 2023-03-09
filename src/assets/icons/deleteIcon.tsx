@@ -1,6 +1,6 @@
 import React from "react";
 
-export const DeleteIcon = ({ width = 16, height = 16 }) => {
+export const DeleteIcon = ({ width = 16, height = 16 }: TIcon) => {
   return (
     <svg
       width={width + "px"}

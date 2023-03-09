@@ -1,3 +1,8 @@
+type TIcon = {
+  width?: number;
+  height?: number;
+};
+
 type TProduct = {
   id: number;
   name: string;
