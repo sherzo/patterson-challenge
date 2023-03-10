@@ -1,9 +1,11 @@
 # Frontend Challenge
 
-`React + Webpack + Typescript + Redux + Redux Persist `
+Challenge fronted de tienda en linea con carrito de compra.
 
-Visualizar demo en linea [Demo online](https://patterson-agency-store.vercel.app/)
+`React + Typescript + Redux + Redux Persist + Webpack`
 
-![Demo online](https://raw.githubusercontent.com/sherzo/patterson-challenge/master/src/assets/images/demo-online-capture.png)
+Visualizar [Demo en linea](https://patterson-agency-store.vercel.app/)
+
+![Demo online image](https://raw.githubusercontent.com/sherzo/patterson-challenge/master/src/assets/images/demo-online-capture.png)
 
 by: [Saul Florez](https://github.com/sherzo)
