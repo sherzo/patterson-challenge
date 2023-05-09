@@ -15,7 +15,7 @@ export const getProducts = async (): Promise<TProduct[]> => {
   }
 };
 
-export const getReductions = () => {
+export const getReductions = (): TReduction[] => {
   return [
     {
       code: 'DTO10',
